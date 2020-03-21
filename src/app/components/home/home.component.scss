@@ -1,0 +1,14 @@
+.text-uppercase {
+  text-transform: uppercase;
+  align-content: center;
+}
+
+tr td:not(:first-child) {
+    text-align: center;
+}
+
+tr th{
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #e2e2e2;
+}
