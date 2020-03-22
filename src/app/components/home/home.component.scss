@@ -3,12 +3,27 @@
   align-content: center;
 }
 
-tr td:not(:first-child) {
-    text-align: center;
+// tr td:not(:first-child) {
+//     text-align: center;
+// }
+
+// tr th{
+//     text-align: center;
+//     text-transform: uppercase;
+//     background-color: #e2e2e2;
+// }
+
+::ng-deep body .ui-table .ui-table-caption, body .ui-table .ui-table-summary {
+  background-color: transparent;
+  color: #333333;
+  border: none;
+  padding: 0.571em 1em;
+  text-align: center;
 }
 
-tr th{
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #e2e2e2;
+::ng-deep body .ui-table .ui-table-tbody > tr {
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px solid #9f9696;
+  border-top: 1px solid #9f9696;
 }
