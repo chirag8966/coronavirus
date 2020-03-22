@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
-  { path: '' , redirectTo: 'home' , pathMatch: 'full'},
+  { path: '' , redirectTo: 'home' , pathMatch: 'prefix'},
   { path: 'home' , component: HomeComponent  }
 ];
 
