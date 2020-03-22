@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   globalStat: any;
   countryStat: any;
   cols: any[];
+  loading = true;
 
   constructor(private getDataService: GetDataService) { }
 
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
     this.getDataService.getCountryStats().subscribe((res: any) => {
       this.countryStat = res.countries_stat;
       console.log('country', this.countryStat);
+      this.loading = false
     });
 
     this.cols = [

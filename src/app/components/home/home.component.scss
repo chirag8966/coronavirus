@@ -1,29 +1,121 @@
+// global search
+.globalSearch {
+  $primary: #0e63c488;
+  $secondary: #5f6e65;
+  $gray: #9b9b9b;
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 98%;
+  }
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #726c6c;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+  }
+
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $gray;
+  }
+
+  .form__field:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $primary;
+      font-weight: 700;
+    }
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $primary, $secondary);
+    border-image-slice: 1;
+  }
+  /* reset input */
+  .form__field {
+    &:required,
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+  /* demo */
+}
+
+//global search
+
 .text-uppercase {
   text-transform: uppercase;
   align-content: center;
 }
 
-// tr td:not(:first-child) {
-//     text-align: center;
-// }
+tr td:not(:first-child) {
+  text-align: left;
+}
+tr th {
+  text-align: left;
+  text-transform: uppercase;
+  background-color: #e2e2e2;
+}
 
-// tr th{
-//     text-align: center;
-//     text-transform: uppercase;
-//     background-color: #e2e2e2;
-// }
+@media only screen and (max-width: 600px) {
+  tr td:not(:first-child) {
+    text-align: left;
+  }
+  tr th {
+    text-align: left;
+    text-transform: uppercase;
+    background-color: #e2e2e2;
+  }
+}
 
-::ng-deep body .ui-table .ui-table-caption, body .ui-table .ui-table-summary {
+::ng-deep body .ui-table .ui-table-caption,
+body .ui-table .ui-table-summary {
   background-color: transparent;
   color: #333333;
   border: none;
-  padding: 0.571em 1em;
+  padding: 0.571em 0em;
   text-align: center;
 }
 
-::ng-deep body .ui-table .ui-table-tbody > tr {
+::ng-deep body .ui-table .ui-table-tbody > tr:not(:first-child) {
   background-color: #ffffff;
   color: #333333;
   border-bottom: 1px solid #9f9696;
   border-top: 1px solid #9f9696;
+}
+
+::ng-deep .ui-table-loading-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  margin-top: 15%;
+  margin-left: -1em;
 }

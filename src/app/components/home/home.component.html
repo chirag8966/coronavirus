@@ -1,10 +1,16 @@
 <div class="pt-4 pb-4 container">
 
-  <p-table #dt [columns]="cols" [value]="countryStat" [responsive]="true" [scrollable]="true" scrollHeight="500px">
+  <p-table #dt [columns]="cols" [value]="countryStat" [responsive]="true" [scrollable]="true" scrollHeight="500px" [loading]="loading">
     <ng-template pTemplate="caption">
-      <div class="mb-2">
-        <input type="text" class="input-group-text" pInputText size="50" placeholder="Search Country"
-        (input)="dt.filterGlobal($event.target.value,'contains')" style="width:100%">
+      <div class="mb-2 globalSearch">
+
+        <div class="form__group field">
+          <input type="input" class="form__field" placeholder="Search Country" name="name" id='name' (input)="dt.filterGlobal($event.target.value,'contains')"  />
+          <label for="name" class="form__label">Search Country</label>
+        </div>
+
+        <!-- <input type="text" class="input-group-text" pInputText size="50" placeholder="Search Country"
+        (input)="dt.filterGlobal($event.target.value,'contains')" style="width:100%"> -->
       </div>
     </ng-template>
     <ng-template pTemplate="header" let-columns>
