@@ -38,4 +38,12 @@ export class HomeComponent implements OnInit {
     ];
   }
 
+  scrollto(dest:string){
+    const el: HTMLElement|null = document.getElementById(dest);
+    if (el) {
+      setTimeout(() =>
+        el.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'}), 0);
+    }
+  }
+
 }
