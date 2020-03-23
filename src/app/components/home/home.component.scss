@@ -151,8 +151,26 @@ body .ui-table .ui-table-summary {
   font-weight: 500;
 }
 
-.show-pointer{
-  a{
+.navLinkStyle{
+  li a{
     cursor: pointer;
+    font-size: 1.1rem;
+    color: black;
+    &:hover{
+      color: #4285f4 ;
+    }
+  }
+}
+
+.navbar-toggler{
+  border: none !important;
+  &:focus{
+    outline: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .displayHide {
+    display: none;
   }
 }
